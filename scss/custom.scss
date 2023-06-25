@@ -79,13 +79,44 @@ p {
         transform: translateZ(-1px) scale(2);
     }
 
+    .parallax__layer--front {
+        transform: translateZ(0.1px) scale(0.9);
+    }
+
+    .parallax__layer--slightback {
+        transform: translateZ(-0.1px) scale(1.1);
+        background: blue;
+    }
+
+    // parallax groups let us layer background parallax objects visually over
+    // foreground parallax objects
+    .parallax__group {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        transform-style: preserve-3d;
+    }
+
 // TETRAHEDRA
     .tetrahedron1 {
         position:relative;
         display: block;
-        left: 65vw;
-        top: 37vh;
+        left: 63vw;
+        top: 30vh;
         width: 15vw;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .tetrahedron2 {
+        position: relative;
+        display: block;
+        // left:10vw;
+        // I think the parallax scaling effectively translates the layer in a way I have not been able to figure out
+        top: 84vh;
+        width: 20vh;
 
         img {
             width: 100%;

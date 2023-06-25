@@ -70,14 +70,40 @@ p {
   transform: translateZ(-1px) scale(2);
 }
 
+.parallax__layer--front {
+  transform: translateZ(0.1px) scale(0.9);
+}
+
+.parallax__layer--slightback {
+  transform: translateZ(-0.1px) scale(1.1);
+  background: blue;
+}
+
+.parallax__group {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
 .tetrahedron1 {
   position: relative;
   display: block;
-  left: 65vw;
-  top: 37vh;
+  left: 63vw;
+  top: 30vh;
   width: 15vw;
 }
 .tetrahedron1 img {
+  width: 100%;
+}
+
+.tetrahedron2 {
+  position: relative;
+  display: block;
+  top: 84vh;
+  width: 20vh;
+}
+.tetrahedron2 img {
   width: 100%;
 }
 

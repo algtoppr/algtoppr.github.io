@@ -8,6 +8,7 @@
     <script>
       function setSectionMargins() {
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
+        console.log(`${titledata.left}`)
         $(".section-content-wrapper").css({'margin-left': `${titledata.left}px`});
         $(".section-content-wrapper").css({'margin-right': `${$(window).width() - titledata.right}px`});
       };
@@ -38,24 +39,39 @@
 
 
     <div class="parallax scroller">
-      <div class="parallax__layer parallax__layer--back">
-        <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
-      </div>
-      <div class="section home-page-header parallax__layer parallax__layer--base">
-        <div class="page-header-title">
-          <img src="images/algebraicstructures.png">
-          <img src="images/intopology.png">
+      <div class="parallax__group">
+        <div class="section home-page-header parallax__layer parallax__layer--base">
+          <div id="algtoppr-title" class="page-header-title">
+            <img src="images/algebraicstructures.png">
+            <img src="images/intopology.png" style="opacity:0;">
+          </div>
         </div>
       </div>
-      <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
-        <div class="section-content-wrapper">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+      <div class="parallax__group">
+        <div class="parallax__layer parallax__layer--back">
+          <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
+        </div>
+        <div class="section home-page-header parallax__layer parallax__layer--base">
+          <div class="page-header-title">
+            <img src="images/algebraicstructures.png" style="opacity:0;">
+            <img src="images/intopology.png">
+          </div>
+        </div>
+        <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
+          <div class="section-content-wrapper">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="parallax__group">
+        <div class="parallax__layer parallax__layer--slightback">
+          <div class="tetrahedron2"><img src="images/tetrahedron2.png"></div>
         </div>
       </div>
     </div>
