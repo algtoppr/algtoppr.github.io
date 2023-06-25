@@ -11859,6 +11859,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.body {
+  background-color: #292323;
+}
+
 .page-header, .home-page-header {
   display: block;
   position: absolute;
@@ -11870,13 +11874,9 @@ textarea.form-control-lg {
 }
 .page-header .page-header-title, .home-page-header .page-header-title {
   display: block;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   width: 100%;
   color: #ccc;
-  font-size: 10em;
+  font-size: 10px;
   font-family: "Le Jour", serif;
 }
 
