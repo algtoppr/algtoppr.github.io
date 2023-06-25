@@ -4,6 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="scss/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      function setSectionMargins() {
+        var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
+        $(".section-content-wrapper").css({'margin-left': `${titledata.left}px`});
+        $(".section-content-wrapper").css({'margin-right': `${$(window).width() - titledata.right}px`});
+
+        if ($(window).width() < 1000) {
+          $(".section-content-wrapper").css({'padding-top': '100px'});
+          $(".section-content-wrapper").css({'padding-bottom': '100px'}); 
+        } else {
+          $(".section-content-wrapper").css({'padding-top': `${titledata.top}px`});
+          $(".section-content-wrapper").css({'padding-bottom': `${titledata.bottom}px`}); 
+        }
+      };
+      $( document ).ready(function() {
+        setSectionMargins();
+      });
+      $(window).resize(function() {
+        setSectionMargins();
+        console.log(`${$(window).width()}`)
+      });
+    </script>
     <title>Algebraic Structures in Topology</title>
   </head>
   <body>
@@ -20,10 +43,20 @@
     </div>
 
     <div class="scroller">
+      <div class="foreground-parallax-wrapper"><img src="images/tetrahedron1.png" width="200" style="top:20vh;left:80vw;"></div>
       <div class="section home-page-header">
-        <div class="page-header-title">ALGEBRAIC</br>STRUCTURES</br>IN TOPOLOGY</div>
+        <div id="algtoppr-title" class="page-header-title">ALGEBRAIC</br>STRUCTURES</br>IN TOPOLOGY</div>
       </div>
-      <div class="section" style="height:100vh;background-color:#EDE4D9;">
+      <div id="algtoppr-about" class="section">
+        <div class="section-content-wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
       </div>
     </div>
   </body>

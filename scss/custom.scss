@@ -1,14 +1,15 @@
-// @import "../node_modules/bootstrap/scss/bootstrap";
-
 // Le Jour serif
 @import url('https://fonts.cdnfonts.com/css/le-jour');
 
 // Inria Serif for navbar
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&display=swap');
 
+// Source serif for text
+@import url("https://use.typekit.net/yjs8yox.css");
 
 [data-bs-theme="algtoppr-dark"] {
     --bs-body-color: #292323;
+    --bs-text-color: #494743;
 }
 
 body {
@@ -19,12 +20,19 @@ body {
     overflow-y: hidden;
 }
 
+p {
+    font-family: "source-serif-pro", serif;
+    color: var(--bs-text-color);
+    font-size: 20px;
+}
+
 #navbar {
     left: 0;    
     top: 0;
     overflow: hidden;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 .navbar-right {
@@ -55,17 +63,35 @@ body {
     width: 100vw;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+
+    // for parallax
+    z-index: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
 }
 
 .section {
     width: 100vw;
-    height: 100vh;
+    height: max-content;
+    min-height: 100vh;
     scroll-snap-align: start;
 }
 
+.section-content-wrapper {
+    display: block;
+}
+
+#algtoppr-about {
+    height:100vh;
+    background-color:#EDE4D9;
+    height: max-content;
+}
+
+.foreground-parallax-wrapper {
+    z-index: 2;
+}
+
 .home-page-header {
-    // display: block;
-    // position: absolute;
     top: 0px;
     width: 100vw;
     height: 100vh;
@@ -98,3 +124,15 @@ body {
         }
     }
   }
+
+
+#mobile-indicator {
+    display: none;
+}
+
+// mobile should be 767px but my cutoff is 1000px
+@media (max-width: 1000px) {
+    #mobile-indicator {
+        display: block;
+    }
+}
