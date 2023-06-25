@@ -6,6 +6,10 @@
 
 body {
   background-color: var(--bs-body-color);
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #navbar {
@@ -26,24 +30,36 @@ body {
 #navbar li {
   display: inline-block;
   padding: 5px 10px 5px 10px;
-  color: #d4ccc2;
+  color: #948C86;
   font-size: 20px;
+  transition: ease color 0.3s;
 }
-#navbar li :hover {
+#navbar li:hover {
   color: #d14a03;
 }
 
-.page-header, .home-page-header {
-  display: block;
-  position: absolute;
+.scroller {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.home-page-header {
   top: 0px;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   transition: ease height 0.3s;
 }
-.page-header .page-header-title, .home-page-header .page-header-title {
+.home-page-header .page-header-title {
   display: block;
-  position: absolute;
+  position: relative;
   width: max-content;
   top: 50%;
   left: 50%;
