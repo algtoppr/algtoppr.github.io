@@ -4,11 +4,29 @@
 @import url('https://fonts.cdnfonts.com/css/le-jour');
 
 
-// Default variable overrides
-$body-bg: #292323;
-.body {
-    background-color: #292323;
-}
+[data-bs-theme="algtoppr-dark"] {
+    --bs-body-color: #292323;
+    // --bs-body-color-rgb: #{to-rgb($white)};
+    // --bs-body-bg: var(--bs-blue);
+    // --bs-body-bg-rgb: #{to-rgb($blue)};
+    // --bs-tertiary-bg: #{$blue-600};
+  
+    // .dropdown-menu {
+    //   --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+    //   --bs-dropdown-link-active-bg: #{$blue-700};
+    // }
+  
+    // .btn-secondary {
+    //   --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
+    //   --bs-btn-border-color: #{rgba($white, .25)};
+    //   --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
+    //   --bs-btn-hover-border-color: #{rgba($white, .25)};
+    //   --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
+    //   --bs-btn-active-border-color: #{rgba($white, .5)};
+    //   --bs-btn-focus-border-color: #{rgba($white, .5)};
+    //   --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+    // }
+  }
 
 .page-header, .home-page-header {
     display: block;
@@ -18,17 +36,17 @@ $body-bg: #292323;
     height: 40vh;
     padding-left: 10vw;
     padding-right: 10vw;
-    background-color: black;
+
     .page-header-title {
         display: block;
-        // position: relative;
-        // top: 50%;
-        // -ms-transform: translateY(-50%);
-        // transform: translateY(-50%);
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         width: 100%;
         color: #ccc;
-        font-size: 5em;
-        line-height: 5em;
+        font-size: 60px;
+        line-height: 60px;
         font-family: 'Le Jour', serif;
     }
 }
@@ -38,5 +56,10 @@ $body-bg: #292323;
         height: 100vh;
         padding-left: 15vw;
         padding-right: 15vw;
+        
+        .page-header-title {
+            font-size: 120px;
+            line-height: 120px;
+        }
     }
   }

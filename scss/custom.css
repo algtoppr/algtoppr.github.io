@@ -11859,8 +11859,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.body {
-  background-color: #292323;
+[data-bs-theme=algtoppr-dark] {
+  --bs-body-color: #292323;
 }
 
 .page-header, .home-page-header {
@@ -11871,14 +11871,17 @@ textarea.form-control-lg {
   height: 40vh;
   padding-left: 10vw;
   padding-right: 10vw;
-  background-color: black;
 }
 .page-header .page-header-title, .home-page-header .page-header-title {
   display: block;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 100%;
   color: #ccc;
-  font-size: 5em;
-  line-height: 5em;
+  font-size: 60px;
+  line-height: 60px;
   font-family: "Le Jour", serif;
 }
 
@@ -11887,6 +11890,10 @@ textarea.form-control-lg {
     height: 100vh;
     padding-left: 15vw;
     padding-right: 15vw;
+  }
+  .home-page-header .page-header-title {
+    font-size: 120px;
+    line-height: 120px;
   }
 }
 
