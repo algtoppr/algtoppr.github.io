@@ -13,6 +13,7 @@
       };
       $( document ).ready(function() {
         setSectionMargins();
+        console.log($("#algtoppr-title").width());
       });
       $(window).resize(function() {
         setSectionMargins();
@@ -33,26 +34,30 @@
         </ul>
       </div>
     </div>
-    <div class="wrapper">
-      <div class="pos background-parallax-layer">
-        <img src="images/tetrahedron1.png" width="200">
+
+
+
+    <div class="parallax scroller">
+      <div class="parallax__layer parallax__layer--back">
+        <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
       </div>
-      <div class="scroller pos">
-        <div class="section home-page-header">
-          <div id="algtoppr-title" class="page-header-title">ALGEBRAIC</br>STRUCTURES</br>IN TOPOLOGY</div>
-        </div>
-        <div id="algtoppr-about" class="section">
-          <div class="section-content-wrapper">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+      <div class="section home-page-header parallax__layer parallax__layer--base">
+        <div id="algtoppr-title" class="page-header-title">ALGEBRAIC</br>STRUCTURES</br>IN TOPOLOGY</div>
+      </div>
+      <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
+        <div class="section-content-wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </div>
       </div>
     </div>
+
+
+
   </body>
 </html>
