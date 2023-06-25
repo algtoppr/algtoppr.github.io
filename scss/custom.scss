@@ -58,32 +58,52 @@ p {
     }
 }
 
-.scroller {
-    height: 100vh;
-    width: 100vw;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+// PARALLAX
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
 
-    // for parallax
-    z-index: 0;
-    perspective: 1px;
-    transform-style: preserve-3d;
-}
+        perspective: 1px;
+    	transform-style:preserve-3d;
+    }
 
-.section {
-    width: 100vw;
-    height: max-content;
-    min-height: 100vh;
-    scroll-snap-align: start;
-    position: relative;
-}
+    .pos {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
 
-.section-content-wrapper {
-    display: block;
-    position: absolute;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
+    .background-parallax-layer {
+        transform: translateZ(-1px) scale(2);
+        left: 50vw;
+        top: 50vh;
+        transform-style: preserve-3d;
+    }
+
+// SNAP SCROLL LAYER
+    .scroller {
+        height: 100vh;
+        width: 100vw;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+    .section {
+        width: 100vw;
+        height: max-content;
+        min-height: 100vh;
+        scroll-snap-align: start;
+        position: relative;
+    }
+    .section-content-wrapper {
+        display: block;
+        position: absolute;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
 
 #algtoppr-about {
     height:100vh;
@@ -91,9 +111,6 @@ p {
     height: max-content;
 }
 
-.foreground-parallax-wrapper {
-    z-index: 2;
-}
 
 .home-page-header {
     top: 0px;

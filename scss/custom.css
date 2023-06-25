@@ -47,14 +47,35 @@ p {
   color: #d14a03;
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-parallax-layer {
+  transform: translateZ(-1px) scale(2);
+  left: 50vw;
+  top: 50vh;
+  transform-style: preserve-3d;
+}
+
 .scroller {
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  z-index: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
 }
 
 .section {
@@ -76,10 +97,6 @@ p {
   height: 100vh;
   background-color: #EDE4D9;
   height: max-content;
-}
-
-.foreground-parallax-wrapper {
-  z-index: 2;
 }
 
 .home-page-header {
