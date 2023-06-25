@@ -75,10 +75,14 @@ p {
     height: max-content;
     min-height: 100vh;
     scroll-snap-align: start;
+    position: relative;
 }
 
 .section-content-wrapper {
     display: block;
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 #algtoppr-about {
@@ -124,15 +128,3 @@ p {
         }
     }
   }
-
-
-#mobile-indicator {
-    display: none;
-}
-
-// mobile should be 767px but my cutoff is 1000px
-@media (max-width: 1000px) {
-    #mobile-indicator {
-        display: block;
-    }
-}

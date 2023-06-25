@@ -10,14 +10,6 @@
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
         $(".section-content-wrapper").css({'margin-left': `${titledata.left}px`});
         $(".section-content-wrapper").css({'margin-right': `${$(window).width() - titledata.right}px`});
-
-        if ($(window).width() < 1000) {
-          $(".section-content-wrapper").css({'padding-top': '100px'});
-          $(".section-content-wrapper").css({'padding-bottom': '100px'}); 
-        } else {
-          $(".section-content-wrapper").css({'padding-top': `${titledata.top}px`});
-          $(".section-content-wrapper").css({'padding-bottom': `${titledata.bottom}px`}); 
-        }
       };
       $( document ).ready(function() {
         setSectionMargins();
