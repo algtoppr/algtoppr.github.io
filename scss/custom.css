@@ -11880,20 +11880,16 @@ textarea.form-control-lg {
   transform: translateY(-50%);
   width: 100%;
   color: #ccc;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 7vw;
+  line-height: 7vw;
   font-family: "Le Jour", serif;
 }
 
 @media (min-width: 768px) {
   .home-page-header {
     height: 100vh;
-    padding-left: 15vw;
-    padding-right: 15vw;
-  }
-  .home-page-header .page-header-title {
-    font-size: 120px;
-    line-height: 120px;
+    padding-left: 25vw;
+    padding-right: 25vw;
   }
 }
 
