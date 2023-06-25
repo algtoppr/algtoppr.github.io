@@ -18,7 +18,7 @@ $body-bg: #292323;
     height: 40vh;
     padding-left: 10vw;
     padding-right: 10vw;
-
+    background-color: black;
     .page-header-title {
         display: block;
         // position: relative;
@@ -27,7 +27,8 @@ $body-bg: #292323;
         // transform: translateY(-50%);
         width: 100%;
         color: #ccc;
-        font-size: 10px;
+        font-size: 5em;
+        line-height: 5em;
         font-family: 'Le Jour', serif;
     }
 }

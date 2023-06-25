@@ -11871,12 +11871,14 @@ textarea.form-control-lg {
   height: 40vh;
   padding-left: 10vw;
   padding-right: 10vw;
+  background-color: black;
 }
 .page-header .page-header-title, .home-page-header .page-header-title {
   display: block;
   width: 100%;
   color: #ccc;
-  font-size: 10px;
+  font-size: 5em;
+  line-height: 5em;
   font-family: "Le Jour", serif;
 }
 
