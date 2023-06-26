@@ -8,9 +8,9 @@
     <script>
       function setSectionMargins() {
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
-        console.log(`${titledata.left}`)
-        $(".section-content-wrapper").css({'margin-left': `${titledata.left}px`});
-        $(".section-content-wrapper").css({'margin-right': `${$(window).width() - titledata.right}px`});
+        var windoww = $(window).width();
+        $(".section-content-wrapper").css({'margin-left': `${(windoww - titledata.width)/2}px`});
+        $(".section-content-wrapper").css({'margin-right': `${(windoww - titledata.width)/2}px`});
       };
       function setTetrahedron1() {
         var offset_from_title_top = 10;

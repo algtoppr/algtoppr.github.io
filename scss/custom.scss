@@ -206,4 +206,10 @@ p {
 
     @media (max-width: 1183px) {
         //width at which the cenetered title starts to look weird
+        .home-page-header {
+            .page-header-title {
+                -ms-transform: translateY(-50%) translateX(-57%);
+            transform: translateY(-50%) translateX(-57%);
+            }
+        }   
     }

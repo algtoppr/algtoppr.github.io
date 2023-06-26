@@ -174,5 +174,11 @@ p {
     width: 83.125vw;
   }
 }
+@media (max-width: 1183px) {
+  .home-page-header .page-header-title {
+    -ms-transform: translateY(-50%) translateX(-57%);
+    transform: translateY(-50%) translateX(-57%);
+  }
+}
 
 /*# sourceMappingURL=custom.css.map */
