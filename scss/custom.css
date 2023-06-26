@@ -4,6 +4,8 @@
 [data-bs-theme=algtoppr-dark] {
   --bs-body-color: #292323;
   --bs-text-color: #494743;
+  --bs-light-section-bg: #EDE4D9;
+  --bs-light-blue: #8bb1a9;
 }
 
 body {
@@ -142,9 +144,9 @@ p {
   margin-bottom: 100px;
 }
 
-#algtoppr-about {
+.section[id^=algtoppr-] {
   height: 100vh;
-  background-color: #EDE4D9;
+  background-color: var(--bs-light-section-bg);
   height: max-content;
 }
 

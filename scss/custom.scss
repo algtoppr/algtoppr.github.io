@@ -11,7 +11,13 @@
     --bs-body-color: #292323;
     // --bs-body-color: #1c1c1d;
     // --bs-body-color: #221e1e;
+    // --bs-body-color: #191008;
     --bs-text-color: #494743;
+
+    --bs-light-section-bg: #EDE4D9;
+    // --bs-light-section-bg: #efe9e3;
+
+    --bs-light-blue: #8bb1a9;
 }
 
 body {
@@ -162,11 +168,12 @@ p {
         margin-bottom: 100px;
     }
 
-#algtoppr-about {
+.section[id^=algtoppr-] {
     height:100vh;
-    background-color:#EDE4D9;
+    background-color: var(--bs-light-section-bg);
     height: max-content;
 }
+
 
 // TITLE
     .home-page-header {
