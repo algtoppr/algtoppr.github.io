@@ -9,8 +9,8 @@
       function setSectionMargins() {
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
         var windoww = $(window).width();
-        $(".section-content-wrapper").css({'margin-left': `${(windoww - titledata.width)/2}px`});
-        $(".section-content-wrapper").css({'margin-right': `${(windoww - titledata.width)/2}px`});
+        $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
+        $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
       };
       function setTetrahedron1() {
         var offset_from_title_top = 10;
@@ -68,31 +68,80 @@
           </div>
         </div>
         <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
-          <div class="section-content-wrapper">
+          <div class="section__content section__content--narrow">
+            <h1>About</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We are a bi-annual algebraic topology conference held in <b>San Juan, Puerto Rico.</b> 
             </p>
           </div>
         </div>
         <div id="algtoppr-speakers" class="section parallax__layer parallax__layer--base">
-          <div class="section-content-wrapper">
+          <div class="section__content section__content--wide">
+            <div class="flex__row">
+              <div class="flex__col">
+                <h1>Invited Talks</h1>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+              </div>
+              <div class="flex__col">
+                <h1>Contributed Talks</h1>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+              </div>
+              <div class="flex__col">
+                <h1>Minicourses</h1>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+                <b>Name Lastname</b><br>
+                Description and affiliation<br><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="algtoppr-location" class="section parallax__layer parallax__layer--base">
+          <div class="section__content section__content--wide">
+            <h1>Location</h1>
+          </div>
+        </div>
+        <div id="algtoppr-funding" class="section parallax__layer parallax__layer--base">
+          <div class="section__content section__content--wide">
+            <h1>Funding</h1>
             <p>
-              Second lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Funding is available for both domestic and international graduate students.
             </p>
+            <br><br>
+            <h1>Sponsors</h1>
           </div>
         </div>
       </div>
       <div class="parallax__group">
         <div class="parallax__layer parallax__layer--slightback">
           <div class="tetrahedron2"><img src="images/tetrahedron2.png"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--slightback">
+          <div class="tetrahedron4"><img src="images/tetrahedron4.png"></div>
         </div>
       </div>
     </div>

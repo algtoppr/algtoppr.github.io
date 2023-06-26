@@ -29,11 +29,6 @@ body {
     overflow-y: hidden;
 }
 
-p {
-    font-family: "source-serif-pro", serif;
-    color: var(--bs-text-color);
-    font-size: 20px;
-}
 
 #navbar {
     left: 0;    
@@ -148,6 +143,20 @@ p {
         }
     }
 
+    .tetrahedron4 {
+        position: relative;
+        display: block;
+        // left:10vw;
+        // I think the parallax scaling effectively translates the layer in a way I have not been able to figure out
+        top: 170vh;
+        left: 70vw;
+        width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
 // SNAP SCROLL LAYER
     .scroller {
         height: 100vh;
@@ -162,24 +171,52 @@ p {
         scroll-snap-align: start;
         position: relative;
     }
-    .section-content-wrapper {
+    .section__content {
         display: block;
         position: absolute;
         margin-top: 100px;
         margin-bottom: 100px;
 
+        font-family: "source-serif-pro", serif;
+        color: var(--bs-text-color);
+        font-size: 20px;
+
         b {
             font-weight: 700;
             color: var(--bs-orange);
         }
+
+        h1 {
+            display: block;
+            position: relative;
+            font-family: 'Le Jour', serif;
+            font-size: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
-.section[id^=algtoppr-] {
-    height:100vh;
-    background-color: var(--bs-light-section-bg);
-    height: max-content;
-}
+    .section__content--wide {
+        display: block;
+        position: absolute;
+        margin: 100px 10vw 100px 10vw;
+        width: calc(100vw - 200px);
+    }
 
+    .section[id^=algtoppr-] {
+        height:100vh;
+        background-color: var(--bs-light-section-bg);
+        height: max-content;
+    }
+
+// FLEX
+    .flex__row {
+        display: flex;
+    }
+    .flex__col {
+        flex: 1;
+        // padding: 0 auto 0 auto;
+    }
 
 // TITLE
     .home-page-header {
@@ -226,3 +263,4 @@ p {
             }
         }   
     }
+
