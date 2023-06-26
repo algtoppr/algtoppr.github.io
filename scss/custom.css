@@ -76,7 +76,10 @@ p {
 
 .parallax__layer--slightback {
   transform: translateZ(-0.1px) scale(1.1);
-  background: blue;
+}
+
+.parallax__layer--wayback {
+  transform: translateZ(-2px) scale(3);
 }
 
 .parallax__group {
@@ -91,10 +94,9 @@ p {
   display: block;
   left: 63vw;
   top: 30vh;
-  width: 15vw;
 }
 .tetrahedron1 img {
-  width: 100%;
+  height: 100%;
 }
 
 .tetrahedron2 {
@@ -104,6 +106,17 @@ p {
   width: 20vh;
 }
 .tetrahedron2 img {
+  width: 100%;
+}
+
+.tetrahedron3 {
+  position: relative;
+  display: block;
+  top: 3vh;
+  left: 10vw;
+  width: 225px;
+}
+.tetrahedron3 img {
   width: 100%;
 }
 

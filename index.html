@@ -12,13 +12,23 @@
         $(".section-content-wrapper").css({'margin-left': `${titledata.left}px`});
         $(".section-content-wrapper").css({'margin-right': `${$(window).width() - titledata.right}px`});
       };
+      function setTetrahedron1() {
+        var offset_from_title_top = 10;
+        var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
+        var intopology = $("#intopology").get(0).getBoundingClientRect();
+        $(".tetrahedron1").css({
+          'top': `${titledata.top - offset_from_title_top}px`, 
+          'height': `${intopology.top + 0.42 * intopology.height - titledata.top + offset_from_title_top}px`,
+          'left': `${titledata.left + 0.78 * titledata.width}px`
+        });
+      };
       $( document ).ready(function() {
         setSectionMargins();
-        console.log($("#algtoppr-title").width());
+        setTetrahedron1();
       });
       $(window).resize(function() {
         setSectionMargins();
-        console.log(`${$(window).width()}`)
+        setTetrahedron1();
       });
     </script>
     <title>Algebraic Structures in Topology</title>
@@ -42,14 +52,17 @@
       <div class="parallax__group">
         <div class="section home-page-header parallax__layer parallax__layer--base">
           <div id="algtoppr-title" class="page-header-title">
-            <img src="images/algebraicstructures.png">
-            <img src="images/intopology.png" style="opacity:0;">
+            <img id="algebraicstructures" src="images/algebraicstructures.png">
+            <img id="intopology" src="images/intopology.png" style="opacity:0;">
           </div>
         </div>
       </div>
       <div class="parallax__group">
         <div class="parallax__layer parallax__layer--back">
           <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--wayback">
+          <div class="tetrahedron3"><img src="images/tetrahedron3.png"></div>
         </div>
         <div class="section home-page-header parallax__layer parallax__layer--base">
           <div class="page-header-title">

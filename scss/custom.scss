@@ -9,6 +9,8 @@
 
 [data-bs-theme="algtoppr-dark"] {
     --bs-body-color: #292323;
+    // --bs-body-color: #1c1c1d;
+    // --bs-body-color: #221e1e;
     --bs-text-color: #494743;
 }
 
@@ -85,7 +87,10 @@ p {
 
     .parallax__layer--slightback {
         transform: translateZ(-0.1px) scale(1.1);
-        background: blue;
+    }
+
+    .parallax__layer--wayback {
+        transform: translateZ(-2px) scale(3);
     }
 
     // parallax groups let us layer background parallax objects visually over
@@ -103,10 +108,10 @@ p {
         display: block;
         left: 63vw;
         top: 30vh;
-        width: 15vw;
+        // width: 15vw;
 
         img {
-            width: 100%;
+            height: 100%;
         }
     }
 
@@ -120,6 +125,19 @@ p {
 
         img {
             width: 100%;
+        }
+    }
+    
+    .tetrahedron3 {
+        position: relative;
+        display: block;
+        top: 3vh;
+        left: 10vw;
+        // height: 400px;
+        width:225px;
+        img {
+            width: 100%;
+            // transform: rotate(-20deg);
         }
     }
 
@@ -184,4 +202,8 @@ p {
                 width: 83.125vw;
             }
         }
+    }
+
+    @media (max-width: 1183px) {
+        //width at which the cenetered title starts to look weird
     }
