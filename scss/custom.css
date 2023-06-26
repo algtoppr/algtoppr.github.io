@@ -143,15 +143,16 @@ body {
 }
 
 .section[id^=algtoppr-] {
-  height: 100vh;
+  height: max-content;
+  overflow-y: scroll;
   background-color: var(--bs-light-section-bg);
 }
 
 .section__content {
   display: block;
   position: absolute;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   font-family: "source-serif-pro", serif;
   color: var(--bs-text-color);
   font-size: 20px;
@@ -172,7 +173,7 @@ body {
 .section__content--wide {
   display: block;
   position: absolute;
-  margin: 100px 10vw 100px 10vw;
+  margin: 0 10vw 0 10vw;
   width: calc(100vw - 200px);
 }
 

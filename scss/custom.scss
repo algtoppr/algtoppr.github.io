@@ -173,7 +173,9 @@ body {
     }
 
     .section[id^=algtoppr-] {
-    height:100vh;
+    // height:100vh;
+    height:max-content;
+    overflow-y: scroll;
     background-color: var(--bs-light-section-bg);
     // height: max-content;
     }
@@ -181,8 +183,8 @@ body {
     .section__content {
         display: block;
         position: absolute;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        padding-top: 100px;
+        padding-bottom: 100px;
 
         font-family: "source-serif-pro", serif;
         color: var(--bs-text-color);
@@ -206,7 +208,7 @@ body {
     .section__content--wide {
         display: block;
         position: absolute;
-        margin: 100px 10vw 100px 10vw;
+        margin: 0 10vw 0 10vw;
         width: calc(100vw - 200px);
     }
 
@@ -237,8 +239,6 @@ body {
         display: grid;
         row-gap: 5px;
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        // grid-template-rows: repeat(6, 80px);
-        // grid-gap: 1rem;
         grid-auto-flow: dense;
     }
 
@@ -267,15 +267,10 @@ body {
         .page-header-title {
             display: block;
             position: relative;
-            // width: max-content;
             top: 50%;
             left: 50%;
             -ms-transform: translateY(-50%) translateX(-50%);
             transform: translateY(-50%) translateX(-50%);
-            // color: #ccc;
-            // font-size: 10vw;
-            // line-height: 10vw;
-            // font-family: 'Le Jour', serif;
             width: 665px;
             height: max-content;
 
