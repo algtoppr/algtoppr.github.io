@@ -138,7 +138,6 @@ body {
 .section {
   width: 100vw;
   height: max-content;
-  min-height: 100vh;
   scroll-snap-align: start;
   position: relative;
 }
@@ -173,7 +172,6 @@ body {
 }
 
 .section[id^=algtoppr-] {
-  height: 100vh;
   background-color: var(--bs-light-section-bg);
   height: max-content;
 }
