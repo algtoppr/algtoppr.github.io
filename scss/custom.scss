@@ -18,6 +18,7 @@
     // --bs-light-section-bg: #efe9e3;
 
     --bs-light-blue: #8bb1a9;
+    --bs-orange: #D14A03;
 }
 
 body {
@@ -166,6 +167,11 @@ p {
         position: absolute;
         margin-top: 100px;
         margin-bottom: 100px;
+
+        b {
+            font-weight: 700;
+            color: var(--bs-orange);
+        }
     }
 
 .section[id^=algtoppr-] {
