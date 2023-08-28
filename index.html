@@ -16,47 +16,40 @@
         $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
         $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
       };
-      function setTetrahedron1() {
-        var offset_from_title_top = 10;
-        var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
-        var intopology = $("#intopology").get(0).getBoundingClientRect();
-        $(".tetrahedron1").css({
-          'top': `${titledata.top - offset_from_title_top}px`, 
-          'height': `${intopology.top + 0.42 * intopology.height - titledata.top + offset_from_title_top}px`,
-          'left': `${titledata.left + 0.78 * titledata.width}px`
-        });
+      const scrollToAbout = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-about").offset().top});
       };
       $( document ).ready(function() {
         setSectionMargins();
-        setTetrahedron1();
+        // $('.scroller').scroll(function() {
+        //   console.log("scroll")
+        //   if ($('#intopology').position().top + $('#intopology').offset().top + $('#intopology').outerHeight(true) < 0) {
+        //     $('#navbar').css("background-image", "url(images/navbar-bg.png)");
+        //   }
+        //   else {
+        //     $('#navbar').css("background-image", "none");
+        //   }
+        // });
       });
       $(window).resize(function() {
         setSectionMargins();
-        setTetrahedron1();
-      });
-      $("#about-navbutton").click(function() {
-          $('html,scroller').animate({
-              scrollTop: $("#algtoppr-about").offset().top},
-              'slow');
       });
     </script>
     <title>Algebraic Structures in Topology</title>
   </head>
   <body style="background-image: url(images/banner.png);background-attachment: fixed;background-size: cover;">
-    <div id="navbar">
+    <div id="navbar" style="z-index:1;background-image:url(images/navbar-bg.png);background-attachment:fixed;background-size:contain;background-repeat: no-repeat;">
       <div class="navbar-right">
         <ul class="navbar-right">
-          <li id="about-navbutton">about</li>
-          <!-- <li>speakers</li>
-          <li>location </li>
-          <li>funding</li>
-          <li>register</li> -->
+          <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
           <li>past years</li>
         </ul>
       </div>
     </div>
     <div class="parallax scroller">
-      <div class="parallax__group">
+      <div class="parallax__group" style="z-index:2;">
         <div class="section home-page-header parallax__layer parallax__layer--base">
           <div id="algtoppr-title" class="page-header-title">
             <img id="algebraicstructures" src="images/algebraicstructures.png">
@@ -64,13 +57,7 @@
           </div>
         </div>
       </div>
-      <div class="parallax__group">
-        <!-- <div class="parallax__layer parallax__layer--back">
-          <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
-        </div>
-        <div class="parallax__layer parallax__layer--wayback">
-          <div class="tetrahedron3"><img src="images/tetrahedron3.png"></div>
-        </div> -->
+      <div class="parallax__group" style="z-index: index -1 !important;">
         <div class="section home-page-header parallax__layer parallax__layer--base">
           <div class="page-header-title">
             <img src="images/algebraicstructures.png" style="opacity:0;">
