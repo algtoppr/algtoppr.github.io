@@ -251,5 +251,8 @@ ul.gallery__list li.gallery__item {
     transform: translateY(-50%) translateX(-57%);
   }
 }
+.invis {
+  display: none;
+}
 
 /*# sourceMappingURL=custom.css.map */
