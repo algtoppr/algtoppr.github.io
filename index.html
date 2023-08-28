@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="scss/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
+      $(function(){
+        $("#includedContent--about").load("about.html"); 
+      });
       function setSectionMargins() {
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
         var windoww = $(window).width();
@@ -55,12 +58,12 @@
         </div>
       </div>
       <div class="parallax__group">
-        <div class="parallax__layer parallax__layer--back">
+        <!-- <div class="parallax__layer parallax__layer--back">
           <div class="tetrahedron1"><img src="images/tetrahedron1.png"></div>
         </div>
         <div class="parallax__layer parallax__layer--wayback">
           <div class="tetrahedron3"><img src="images/tetrahedron3.png"></div>
-        </div>
+        </div> -->
         <div class="section home-page-header parallax__layer parallax__layer--base">
           <div class="page-header-title">
             <img src="images/algebraicstructures.png" style="opacity:0;">
@@ -70,11 +73,7 @@
         <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
           <div class="section__content section__content--narrow">
             <h1>About</h1>
-            <p>
-              We are a bi-annual algebraic topology conference held in <b>San Juan, Puerto Rico.</b> 
-              <br><br>
-              This site is <b>under construction!</b> Please be patient while the webmaster fixes everything.
-            </p>
+            <div id="includedContent--about"></div>
           </div>
         </div>
         <div id="algtoppr-speakers" class="section parallax__layer parallax__layer--base">
@@ -160,14 +159,14 @@
           </div>
         </div>
       </div>
-      <div class="parallax__group">
+      <!-- <div class="parallax__group">
         <div class="parallax__layer parallax__layer--slightback">
           <div class="tetrahedron2"><img src="images/tetrahedron2.png"></div>
         </div>
         <div class="parallax__layer parallax__layer--slightback">
           <div class="tetrahedron4"><img src="images/tetrahedron4.png"></div>
         </div>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
