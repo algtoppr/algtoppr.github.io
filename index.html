@@ -34,6 +34,11 @@
         setSectionMargins();
         setTetrahedron1();
       });
+      $("#about-navbutton").click(function() {
+          $('html,scroller').animate({
+              scrollTop: $("#algtoppr-about").offset().top},
+              'slow');
+      });
     </script>
     <title>Algebraic Structures in Topology</title>
   </head>
@@ -41,7 +46,7 @@
     <div id="navbar">
       <div class="navbar-right">
         <ul class="navbar-right">
-          <li>about</li>
+          <li id="about-navbutton">about</li>
           <!-- <li>speakers</li>
           <li>location </li>
           <li>funding</li>
