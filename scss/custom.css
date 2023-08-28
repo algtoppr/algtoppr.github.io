@@ -11,6 +11,7 @@
 
 body {
   background-color: var(--bs-body-color);
+  background-image: url("banner.png");
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   overflow-x: hidden;
