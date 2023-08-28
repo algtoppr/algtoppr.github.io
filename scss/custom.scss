@@ -23,7 +23,9 @@
 
 body {
     background-color: var(--bs-body-color);
-    background-image: url("banner.png");
+    // background-image: url(../images/banner.png);
+    // background-attachment: fixed;
+    // background-size: cover;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     overflow-x: hidden;
@@ -51,7 +53,7 @@ body {
     display: inline-block;
     padding: 5px 10px 5px 10px; // top right bottom left
     // color: #d4ccc2;
-    color: #948C86; // TODO: check lvl of contrast satisfies accessibility reqs
+    color: #efefef; // TODO: check lvl of contrast satisfies accessibility reqs
     // averaged with https://meyerweb.com/eric/tools/color-blend/#292323:EDE4D9:10:hex
     // color: #8B83FE;
     font-size: 20px;
