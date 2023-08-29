@@ -23,15 +23,6 @@
       };
       $( document ).ready(function() {
         setSectionMargins();
-        // $('.scroller').scroll(function() {
-        //   console.log("scroll")
-        //   if ($('#intopology').position().top + $('#intopology').offset().top + $('#intopology').outerHeight(true) < 0) {
-        //     $('#navbar').css("background-image", "url(images/navbar-bg.png)");
-        //   }
-        //   else {
-        //     $('#navbar').css("background-image", "none");
-        //   }
-        // });
       });
       $(window).resize(function() {
         setSectionMargins();
@@ -44,7 +35,9 @@
       <div class="navbar-right">
         <ul class="navbar-right">
           <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
-          <li>past years</li>
+          <li>
+            <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a>
+          </li>
         </ul>
       </div>
     </div>

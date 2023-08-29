@@ -65,6 +65,14 @@ body {
     &:hover {
         color: #d14a03;
     }
+
+    a {
+        color:white;
+        text-decoration:none;
+        &:hover{
+            color: #d14a03;
+        }
+    }
 }
 
 // PARALLAX
@@ -268,3 +276,4 @@ body {
     .invis {
         display: none;
     }
+

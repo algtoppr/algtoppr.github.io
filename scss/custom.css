@@ -44,6 +44,13 @@ body {
 #navbar li:hover {
   color: #d14a03;
 }
+#navbar li a {
+  color: white;
+  text-decoration: none;
+}
+#navbar li a:hover {
+  color: #d14a03;
+}
 
 .parallax {
   perspective: 1px;
