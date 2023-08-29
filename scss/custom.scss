@@ -217,7 +217,7 @@ body {
     .home-page-header {
         top: 0px;
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - var(--navbar-height));
         // for smooth transition when resizing screen
         transition: ease height .3s;
         .page-header-title {

@@ -184,7 +184,7 @@ ul.gallery__list li.gallery__item {
 .home-page-header {
   top: 0px;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--navbar-height));
   transition: ease height 0.3s;
 }
 .home-page-header .page-header-title {
