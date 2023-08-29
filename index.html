@@ -19,7 +19,7 @@
       const scrollToAbout = () => {
         console.log("clicked")
         $('.scroller').animate({
-            scrollTop: $("#algtoppr-about").offset().top});
+            scrollTop: $("#algtoppr-about").offset().top / 2});
       };
       $( document ).ready(function() {
         setSectionMargins();
@@ -40,7 +40,7 @@
     <title>Algebraic Structures in Topology</title>
   </head>
   <body style="background-image: url(images/banner.png);background-attachment: fixed;background-size: cover;">
-    <div id="navbar" style="z-index:1;background-image:url(images/navbar-bg.png);background-attachment:fixed;background-size:contain;background-repeat: no-repeat;">
+    <div id="navbar" style="position:absolute;top:0;left:0;z-index:1;">
       <div class="navbar-right">
         <ul class="navbar-right">
           <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
@@ -67,7 +67,13 @@
         <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
           <div class="section__content section__content--narrow">
             <h1>About</h1>
-            <div id="includedContent--about"></div>
+            <p>
+              We are a bi-annual algebraic topology conference held in San Juan, Puerto Rico, organized by Mona Merling, Jeremy Miller, Manuel Rivera, and Natalia Pacheco Tallaj. 
+              The second iteration of this conference will occur on <b>June 5 - June 24, 2024</b>. 
+              
+              <br><br>
+              Information for the 2024 conference will be available on this site soon.
+            </p>  
           </div>
         </div>
         <div id="algtoppr-speakers" class="section parallax__layer parallax__layer--base invis">
