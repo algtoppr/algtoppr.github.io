@@ -21,6 +21,11 @@
         $('.scroller').animate({
             scrollTop: $("#algtoppr-about").offset().top});
       };
+      const scrollToSpeakers = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-speakers").offset().top});
+      };
       $( document ).ready(function() {
         setSectionMargins();
       });
