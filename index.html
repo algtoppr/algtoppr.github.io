@@ -9,6 +9,7 @@
       $(function(){
         $("#includedContent--about").load("about.html"); 
         $("#includedContent--speakers").load("speakers.html"); 
+        $("#includedContent--speakers").load("contact.html");
       });
       function setSectionMargins() {
         var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
@@ -26,6 +27,11 @@
         $('.scroller').animate({
             scrollTop: $("#algtoppr-speakers").offset().top});
       };
+      const scrollToSpeakers = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-contact").offset().top});
+      };
       $( document ).ready(function() {
         setSectionMargins();
       });
@@ -41,9 +47,11 @@
         <ul class="navbar-right">
           <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
           <li id="speakersnavbutton" onclick="scrollToSpeakers()">speakers</li>
+          <li id="speakersnavbutton" onclick="scrollToSpeakers()">contact</li>
           <li>
             <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -120,6 +128,17 @@
             </p>
           </div>
         </div>
+<div id="algtoppr-contact" class="section parallax__layer parallax__layer--base">
+          <div class="section__content section__content--narrow">
+            <h1>Contact</h1>
+            <p>
+              If you have any questions you may contact the organizers at algptoppr at gmail dot com. 
+            </p>  
+          </div>
+        </div>
+
+
+        
         <div id="algtoppr-location" class="section parallax__layer parallax__layer--base invis">
           <div class="section__content section__content--wide">
             <h1>Location</h1>
