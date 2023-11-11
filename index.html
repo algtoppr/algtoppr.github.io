@@ -17,7 +17,22 @@
         $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
         $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
       };
-    
+  const scrollToAbout = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-about").offset().top});
+      };
+      const scrollToSpeakers = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-speakers").offset().top});
+      };
+      const scrollToContact = () => {
+        console.log("clicked")
+        $('.scroller').animate({
+            scrollTop: $("#algtoppr-contact").offset().top});
+      };
+      
       $( document ).ready(function() {
         setSectionMargins();
       });
