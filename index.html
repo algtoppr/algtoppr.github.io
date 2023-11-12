@@ -7,9 +7,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
     $(function(){
+      // Load about.html and setSectionMargins, then load the other content
       $("#includedContent--about").load("about.html", function() {
         setSectionMargins();
+        // After about.html is loaded, set click event handlers for the buttons
+        $("#aboutnavbutton").click(function() {
+          scrollToSection("algtoppr-about");
+        });
+
+        $("#speakersnavbutton").click(function() {
+          scrollToSection("algtoppr-speakers");
+        });
+
+        $("#contactnavbutton").click(function() {
+          scrollToSection("algtoppr-contact");
+        });
       });
+
+      // Load other content
       $("#includedContent--speakers").load("speakers.html");
       $("#includedContent--contact").load("contact.html");
     });
@@ -30,19 +45,6 @@
 
     $(document).ready(function() {
       setSectionMargins();
-
-      // Assign click events after the document is ready
-      $("#aboutnavbutton").click(function() {
-        scrollToSection("algtoppr-about");
-      });
-
-      $("#speakersnavbutton").click(function() {
-        scrollToSection("algtoppr-speakers");
-      });
-
-      $("#contactnavbutton").click(function() {
-        scrollToSection("algtoppr-contact");
-      });
     });
 
     $(window).resize(function() {
