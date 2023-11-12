@@ -7,8 +7,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
     $(function(){
-      $("#includedContent--about").load("about.html"); 
-      $("#includedContent--speakers").load("speakers.html"); 
+      $("#includedContent--about").load("about.html", function() {
+        setSectionMargins();
+      }); 
+      $("#includedContent--speakers").load("speakers.html");
       $("#includedContent--contact").load("contact.html");
     });
 
@@ -19,24 +21,10 @@
       $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
     };
 
-    const scrollToAbout = () => {
-      console.log("Scrolling to about");
+    const scrollToSection = (sectionId) => {
+      console.log("Scrolling to", sectionId);
       $('.scroller').animate({
-        scrollTop: $("#algtoppr-about").offset().top
-      });
-    };
-    
-    const scrollToSpeakers = () => {
-      console.log("Scrolling to speakers");
-      $('.scroller').animate({
-        scrollTop: $("#algtoppr-speakers").offset().top
-      });
-    };
-
-    const scrollToContact = () => {
-      console.log("Scrolling to contact");
-      $('.scroller').animate({
-        scrollTop: $("#algtoppr-contact").offset().top
+        scrollTop: $("#" + sectionId).offset().top
       });
     };
 
@@ -54,18 +42,12 @@
   <div id="navbar" style="position: absolute; top: 0; left: 0; z-index: 1;">
     <div class="navbar-right">
       <ul class="navbar-right">
-        <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
-        <li id="speakersnavbutton" onclick="scrollToSpeakers()">speakers</li>
-        <li id="contactnavbutton" onclick="scrollToContact()">contact</li>
-          <li>
-            <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a>
-          </li>
-          <li>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScloieV080AFS4KU2HEtuM2YyglZXuHOd8SU1xyOj489Bkxug/viewform?usp=sf_link" target="_blank">registration</a>
-          </li>
-        </ul>
-      </div>
+        <li id="aboutnavbutton" onclick="scrollToSection('algtoppr-about')">about</li>
+        <li id="speakersnavbutton" onclick="scrollToSection('algtoppr-speakers')">speakers</li>
+        <li id="contactnavbutton" onclick="scrollToSection('algtoppr-contact')">contact</li>
+      </ul>
     </div>
+  </div>
     <div class="parallax scroller">
       <div class="parallax__group" style="z-index:2;">
         <div class="section home-page-header parallax__layer parallax__layer--base">
