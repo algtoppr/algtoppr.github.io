@@ -6,27 +6,25 @@
   <link rel="stylesheet" href="scss/custom.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
-    $(function(){
-      // Load about.html and setSectionMargins, then load the other content
+    $(document).ready(function(){
       $("#includedContent--about").load("about.html", function() {
         setSectionMargins();
-        // After about.html is loaded, set click event handlers for the buttons
-        $("#aboutnavbutton").click(function() {
-          scrollToSection("algtoppr-about");
-        });
-
-        $("#speakersnavbutton").click(function() {
-          scrollToSection("algtoppr-speakers");
-        });
-
-        $("#contactnavbutton").click(function() {
-          scrollToSection("algtoppr-contact");
-        });
       });
-
-      // Load other content
       $("#includedContent--speakers").load("speakers.html");
       $("#includedContent--contact").load("contact.html");
+
+      // Attach click event handlers to the buttons
+      $(document).on("click", "#aboutnavbutton", function() {
+        scrollToSection("algtoppr-about");
+      });
+
+      $(document).on("click", "#speakersnavbutton", function() {
+        scrollToSection("algtoppr-speakers");
+      });
+
+      $(document).on("click", "#contactnavbutton", function() {
+        scrollToSection("algtoppr-contact");
+      });
     });
 
     function setSectionMargins() {
@@ -42,10 +40,6 @@
         scrollTop: $("#" + sectionId).offset().top
       });
     }
-
-    $(document).ready(function() {
-      setSectionMargins();
-    });
 
     $(window).resize(function() {
       setSectionMargins();
