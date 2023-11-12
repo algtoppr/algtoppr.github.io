@@ -1,54 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="algtoppr-dark">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="scss/custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
-      $(function(){
-        $("#includedContent--about").load("about.html"); 
-        $("#includedContent--speakers").load("speakers.html"); 
-        $("#includedContent--contact").load("contact.html");
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="scss/custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $("#includedContent--about").load("about.html"); 
+      $("#includedContent--speakers").load("speakers.html"); 
+      $("#includedContent--contact").load("contact.html");
+    });
+
+    function setSectionMargins() {
+      var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
+      var windoww = $(window).width();
+      $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
+      $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
+    };
+
+    const scrollToAbout = () => {
+      console.log("clicked")
+      $('.scroller').animate({
+        scrollTop: $("#algtoppr-about").offset().top
       });
-      function setSectionMargins() {
-        var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
-        var windoww = $(window).width();
-        $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
-        $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
-      };
-  const scrollToAbout = () => {
-        console.log("clicked")
-        $('.scroller').animate({
-            scrollTop: $("#algtoppr-about").offset().top});
-      };
-      const scrollToSpeakers = () => {
-        console.log("clicked")
-        $('.scroller').animate({
-            scrollTop: $("#algtoppr-speakers").offset().top});
-      };tf
-      const scrollToContact = () => {
-        console.log("clicked")
-        $('.scroller').animate({
-            scrollTop: $("#algtoppr-contact").offset().top});
-      };
-      
-      $( document ).ready(function() {
-        setSectionMargins();
+    };
+    
+    const scrollToSpeakers = () => {
+      console.log("clicked")
+      $('.scroller').animate({
+        scrollTop: $("#algtoppr-speakers").offset().top
       });
-      $(window).resize(function() {
-        setSectionMargins();
+    };
+
+    const scrollToContact = () => {
+      console.log("clicked")
+      $('.scroller').animate({
+        scrollTop: $("#algtoppr-contact").offset().top
       });
-    </script>
-    <title>Algebraic Structures in Topology</title>
-  </head>
-  <body style="background-image: url(images/banner.png);background-attachment: fixed;background-size: cover;">
-    <div id="navbar" style="position:absolute;top:0;left:0;z-index:1;">
-      <div class="navbar-right">
-        <ul class="navbar-right">
-          <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
-          <li id="speakersnavbutton" onclick="scrollToSpeakers()">speakers</li>
-          <li id="contactnavbutton" onclick="scrollToContact()">contact</li>
+    };
+
+    $(document).ready(function() {
+      setSectionMargins();
+    });
+
+    $(window).resize(function() {
+      setSectionMargins();
+    });
+  </script>
+  <title>Algebraic Structures in Topology</title>
+</head>
+<body class="scroller" style="background-image: url(images/banner.png); background-attachment: fixed; background-size: cover;">
+  <div id="navbar" style="position: absolute; top: 0; left: 0; z-index: 1;">
+    <div class="navbar-right">
+      <ul class="navbar-right">
+        <li id="aboutnavbutton" onclick="scrollToAbout()">about</li>
+        <li id="speakersnavbutton" onclick="scrollToSpeakers()">speakers</li>
+        <li id="contactnavbutton" onclick="scrollToContact()">contact</li>
+      </ul>
+    </div>
+  </div>
           <li>
             <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a>
           </li>
