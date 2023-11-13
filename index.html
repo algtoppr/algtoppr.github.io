@@ -27,14 +27,25 @@
         scrollTop: $("#" + sectionId).offset().top
       });
     };
+$(document).ready(function() {
+  $("#includedContent--about").load("about.html", function() {
+    setSectionMargins();
+  });
+  $("#includedContent--speakers").load("speakers.html");
+  $("#includedContent--contact").load("contact.html");
 
-    $(document).ready(function() {
-      setSectionMargins();
-    });
+  // Event delegation for navigation clicks
+  $('#navbar ul.navbar-right').on('click', 'li', function() {
+    var sectionId = $(this).attr('id').replace('navbutton', '');
+    scrollToSection('algtoppr-' + sectionId);
+  });
 
-    $(window).resize(function() {
-      setSectionMargins();
-    });
+  setSectionMargins(); // Call setSectionMargins here as well
+
+  $(window).resize(function() {
+    setSectionMargins();
+  });
+});
   </script>
   <title>Algebraic Structures in Topology</title>
 </head>
