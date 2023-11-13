@@ -54,14 +54,16 @@ function loadContent(url, target) {
     });
 }
 
+
 function setNavigationClickHandler() {
-  // Event delegation for navigation clicks
-  $('#navbar ul.navbar-right').off('click', 'li'); // Remove existing click handlers
-  $('#navbar ul.navbar-right').on('click', 'li', function() {
-    var sectionId = $(this).attr('id').replace('navbutton', '');
-    scrollToSection('algtoppr-' + sectionId);
-  });
+    // Event delegation for navigation clicks
+    $(document).off('click', '#navbar ul.navbar-right li'); // Remove existing click handlers
+    $(document).on('click', '#navbar ul.navbar-right li', function () {
+        var sectionId = $(this).attr('id');
+        scrollToSection(sectionId);
+    });
 }
+    
   </script>
   <title>Algebraic Structures in Topology</title>
 </head>
