@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" data-bs-theme="algtoppr-dark">
 <head>
   <meta charset="utf-8">
@@ -22,7 +22,7 @@
     const scrollToSection = (sectionId) => {
       console.log("Scrolling to", sectionId);
       $('.scroller').animate({
-         scrollTop: $("#" + sectionId).position().top
+          scrollTop: $("#" + sectionId).position().top
       });
     };
 $(document).ready(function() {
@@ -46,26 +46,21 @@ $(document).ready(function() {
 });
 
 function loadContent(url, target) {
-    return new Promise(function (resolve) {
-        $.get(url, function (data) {
-            $(target).html(data);
-            resolve();
-        });
+  return new Promise(function(resolve) {
+    $(target).load(url, function() {
+      resolve();
     });
+  });
 }
 
-
 function setNavigationClickHandler() {
-    // Event delegation for navigation clicks
-    $('#navbar ul.navbar-right' ).off( 'click',
-'li'): // Remove existing click handlers
-$ ('#navbar ul.navbar-right' ).on('click', 'li', function()
-{
-var sectionId = $(this).attr('id'). replace ('navbutton',
-11);
-scrollToSection('algtoppr-' + sectionId);
-}) ;
-    
+  // Event delegation for navigation clicks
+  $('#navbar ul.navbar-right').off('click', 'li'); // Remove existing click handlers
+  $('#navbar ul.navbar-right').on('click', 'li', function() {
+    var sectionId = $(this).attr('id').replace('navbutton', '');
+    scrollToSection('algtoppr-' + sectionId);
+  });
+}
   </script>
   <title>Algebraic Structures in Topology</title>
 </head>
