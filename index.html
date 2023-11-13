@@ -22,7 +22,7 @@
     const scrollToSection = (sectionId) => {
       console.log("Scrolling to", sectionId);
       $('.scroller').animate({
-        scrollTop: $("#" + sectionId).offset().top
+         scrollTop: $("#" + sectionId).position().top
       });
     };
 $(document).ready(function() {
@@ -57,12 +57,14 @@ function loadContent(url, target) {
 
 function setNavigationClickHandler() {
     // Event delegation for navigation clicks
-    $(document).off('click', '#navbar ul.navbar-right li'); // Remove existing click handlers
-    $(document).on('click', '#navbar ul.navbar-right li', function () {
-        var sectionId = $(this).attr('id');
-        scrollToSection(sectionId);
-    });
-}
+    $('#navbar ul.navbar-right' ).off( 'click',
+'li'): // Remove existing click handlers
+$ ('#navbar ul.navbar-right' ).on('click', 'li', function()
+{
+var sectionId = $(this).attr('id'). replace ('navbutton',
+11);
+scrollToSection('algtoppr-' + sectionId);
+}) ;
     
   </script>
   <title>Algebraic Structures in Topology</title>
