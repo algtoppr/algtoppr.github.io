@@ -30,22 +30,29 @@
 $(document).ready(function() {
   $("#includedContent--about").load("about.html", function() {
     setSectionMargins();
+    setNavigationClickHandler(); // Add this line to set up event delegation after 'about' content is loaded
   });
+
   $("#includedContent--speakers").load("speakers.html");
   $("#includedContent--contact").load("contact.html");
 
-  // Event delegation for navigation clicks
-  $('#navbar ul.navbar-right').on('click', 'li', function() {
-    var sectionId = $(this).attr('id').replace('navbutton', '');
-    scrollToSection('algtoppr-' + sectionId);
-  });
+  // Initial setup of event delegation
+  setNavigationClickHandler();
 
-  setSectionMargins(); // Call setSectionMargins here as well
+  setSectionMargins();
 
   $(window).resize(function() {
     setSectionMargins();
   });
 });
+
+function setNavigationClickHandler() {
+  // Event delegation for navigation clicks
+  $('#navbar ul.navbar-right').on('click', 'li', function() {
+    var sectionId = $(this).attr('id').replace('navbutton', '');
+    scrollToSection('algtoppr-' + sectionId);
+  });
+}
   </script>
   <title>Algebraic Structures in Topology</title>
 </head>
