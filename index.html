@@ -28,26 +28,36 @@
       });
     };
 $(document).ready(function() {
-  $("#includedContent--about").load("about.html", function() {
+  // Load all content and setup event delegation when all content is loaded
+  Promise.all([
+    loadContent("about.html", "#includedContent--about"),
+    loadContent("speakers.html", "#includedContent--speakers"),
+    loadContent("contact.html", "#includedContent--contact")
+  ]).then(function() {
     setSectionMargins();
-    setNavigationClickHandler(); // Add this line to set up event delegation after 'about' content is loaded
+    setNavigationClickHandler();
   });
 
-  $("#includedContent--speakers").load("speakers.html");
-  $("#includedContent--contact").load("contact.html");
-
   // Initial setup of event delegation
-  setNavigationClickHandler();
-
   setSectionMargins();
+  setNavigationClickHandler();
 
   $(window).resize(function() {
     setSectionMargins();
   });
 });
 
+function loadContent(url, target) {
+  return new Promise(function(resolve) {
+    $(target).load(url, function() {
+      resolve();
+    });
+  });
+}
+
 function setNavigationClickHandler() {
   // Event delegation for navigation clicks
+  $('#navbar ul.navbar-right').off('click', 'li'); // Remove existing click handlers
   $('#navbar ul.navbar-right').on('click', 'li', function() {
     var sectionId = $(this).attr('id').replace('navbutton', '');
     scrollToSection('algtoppr-' + sectionId);
