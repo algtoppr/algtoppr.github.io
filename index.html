@@ -9,7 +9,7 @@
     $(function(){
       $("#includedContent--about").load("about.html"); 
       $("#includedContent--speakers").load("speakers.html");
-      $("#includedContent--contact").load("contact.html");
+      $("#includedContent--organizers").load("organizers.html");
     });
 
     function setSectionMargins() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
   Promise.all([
     loadContent("about.html", "#includedContent--about"),
     loadContent("speakers.html", "#includedContent--speakers"),
-    loadContent("contact.html", "#includedContent--contact")
+    loadContent("organizers.html", "#includedContent--organizers")
   ]).then(function() {
     setSectionMargins();
     setNavigationClickHandler();
@@ -70,7 +70,7 @@ function setNavigationClickHandler() {
       <ul class="navbar-right">
         <li id="aboutnavbutton">about</li>
 <li id="speakersnavbutton">speakers</li>
-<li id="contactnavbutton">contact</li>
+<li id="organizersnavbutton">organizers</li>
         <li> <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a></li>
           <li> <a href="https://docs.google.com/forms/d/e/1FAIpQLScloieV080AFS4KU2HEtuM2YyglZXuHOd8SU1xyOj489Bkxug/viewform?usp=sf_link" target="_blank">registration</a></li>
       </ul>
@@ -157,11 +157,12 @@ Teena Gerhardt, Ben Knudsen, and Florian Naef will offer introductory mini-cours
 
           </div>
         </div>
-<div id="algtoppr-contact" class="section parallax__layer parallax__layer--base">
+<div id="algtoppr-organizers" class="section parallax__layer parallax__layer--base">
           <div class="section__content section__content--narrow">
-            <h1>Contact</h1>
+            <h1>organizers</h1>
             <p>
-              If you have any questions you may contact the organizers (Manuel Rivera, Jeremy Miller, Mona Merling, Ralph Kaufmann, Natalia Pacheco-Tallaj) at algptoppr at gmail dot com. 
+              This conference series is organized by Manuel Rivera (Purdue University), Ralph Kaufmann (Purdue University), Mona Merling (UPenn), Jeremy Miller (Purdue University), and Natalia Pacheco-Tallaj) (MIT). 
+              If you have any questions you may organizers the organizers at algptoppr at gmail dot com. 
             </p>  
           </div>
         </div>
