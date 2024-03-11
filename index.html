@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="scss/custom.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
   <script>
     $(function(){
       $("#includedContent--about").load("about.html"); 
@@ -61,19 +64,33 @@ function setNavigationClickHandler() {
     scrollToSection('algtoppr-' + sectionId);
   });
 }
+
+function hambClickFunction () {
+  var x = document.getElementById("navmenu");
+  if (x.className === "") {
+    x.className += "responsive";
+  } else {
+    x.className = "";
+  }
+}
+function navItemClickFunction() {
+  var x = document.getElementById("navmenu");
+  x.className = "";
+}
   </script>
   <title>Algebraic Structures in Topology</title>
 </head>
 <body class="scroller" style="background-image: url(images/banner.png); background-attachment: fixed; background-size: cover;">
+  <label class="hamb" for="side-menu" href="javascript:void(0);" onclick="hambClickFunction()"><span class="hamb-line"></span></label>
   <div id="navbar" style="position: absolute; top: 0; left: 0; z-index: 1;">
-    <div class="navbar-right">
+    <div id="navmenu">
       <ul class="navbar-right">
-        <li id="aboutnavbutton">about</li>
-        <li id="speakersnavbutton">speakers</li>
-        <li id="organizersnavbutton">organizers</li>
-        <li> <a href="https://sites.google.com/view/algebraicstructures" target="_blank">past years</a></li>
-        <li> <a href="https://docs.google.com/forms/d/e/1FAIpQLScloieV080AFS4KU2HEtuM2YyglZXuHOd8SU1xyOj489Bkxug/viewform?usp=sf_link" target="_blank">registration</a></li>
-        <li> <a href="images/poster.jpeg" target="_blank">poster</a></li>
+        <li id="aboutnavbutton" onclick="navItemClickFunction()">about</li>
+        <li id="speakersnavbutton" onclick="navItemClickFunction()">speakers</li>
+        <li id="organizersnavbutton" onclick="navItemClickFunction()">organizers</li>
+        <li> <a href="https://sites.google.com/view/algebraicstructures" target="_blank" onclick="navItemClickFunction()">past years</a></li>
+        <li> <a href="https://docs.google.com/forms/d/e/1FAIpQLScloieV080AFS4KU2HEtuM2YyglZXuHOd8SU1xyOj489Bkxug/viewform?usp=sf_link" target="_blank" onclick="navItemClickFunction()">registration</a></li>
+        <li> <a href="images/poster.jpeg" target="_blank" onclick="navItemClickFunction()">poster</a></li>
       </ul>
     </div>
   </div>
