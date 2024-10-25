@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+
+
+<html lang="en"><head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+
+<title>Algebraic structures in topology at San Juan, Puerto Rico conference series: notes, slides, and talks</title>
+
+<meta name="generator" content="Jekyll v3.9.5" />
+
+<meta property="og:title" content="Algebraic structures in topology at San Juan, Puerto Rico conference series: notes, slides, and talks" />
+
+
+
+<meta property="og:locale" content="en_US" />
+
+
+
+</head>
+
+ 
+
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+
+tex2jax: {
+
+inlineMath: [['$','$'], ['\\(','\\)']]
+
+},
+
+TeX: {
+
+extensions: ["AMSmath.js", "AMSsymbols.js", "AMScd.js"]
+
+},
+
+displayAlign: "center",
+
+displayIndent: "2em",
+
+});
+
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<body>
+
+<main class="page-content" aria-label="Content">
+
+<div class="wrapper">
+
+<article class="post">
+
+
+
+<header class="post-header">
+
+<h1 class="post-title"> Algebraic structures in topology at San Juan, Puerto Rico conference series: notes, slides, and talks </h1>
+
+
+</header>
+
+ 
+<h3 id="2022">2022</h3>
+
+
+
+<p>Mini-course: Operations on Hochschild and cyclic complexes, Boris Tsygan. Lecture notes.</p>
+
+
+<h3 id="2024">2024</h3>
+
+<p>Mini-course: Algebraic K-theory, Teena Gerhardt. Lecture notes.</p>
+<p>Mini-course: Configuration spaces, Ben Knudsen. Lecture notes.</p>
+
+
+
+</body>
+
+
+
+</html>
