@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="algtoppr-dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="scss/custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <script>
+    $(function(){
+      $("#includedContent--about").load("about.html"); 
+      $("#includedContent--speakers").load("speakers.html");
+      $("#includedContent--organizers").load("organizers.html");
+    });
+
+    function setSectionMargins() {
+      var titledata = $("#algtoppr-title").get(0).getBoundingClientRect();
+      var windoww = $(window).width();
+      $(".section__content--narrow").css({'margin-left': `${(windoww - titledata.width)/2}px`});
+      $(".section__content--narrow").css({'margin-right': `${(windoww - titledata.width)/2}px`});
+    };
+
+    const scrollToSection = (sectionId) => {
+      console.log("Scrolling to", sectionId);
+      $('.scroller').animate({
+          scrollTop: $("#" + sectionId).position().top
+      });
+    };
+$(document).ready(function() {
+  // Load all content and setup event delegation when all content is loaded
+  Promise.all([
+    loadContent("about.html", "#includedContent--about"),
+    loadContent("speakers.html", "#includedContent--speakers"),
+    loadContent("organizers.html", "#includedContent--organizers")
+  ]).then(function() {
+    setSectionMargins();
+    setNavigationClickHandler();
+  });
+
+  // Initial setup of event delegation
+  setSectionMargins();
+  setNavigationClickHandler();
+
+  $(window).resize(function() {
+    setSectionMargins();
+  });
+});
+
+function loadContent(url, target) {
+  return new Promise(function(resolve) {
+    $(target).load(url, function() {
+      resolve();
+    });
+  });
+}
+
+function setNavigationClickHandler() {
+  // Event delegation for navigation clicks
+  $('#navbar ul.navbar-right').off('click', 'li'); // Remove existing click handlers
+  $('#navbar ul.navbar-right').on('click', 'li', function() {
+    var sectionId = $(this).attr('id').replace('navbutton', '');
+    scrollToSection('algtoppr-' + sectionId);
+  });
+}
+
+function hambClickFunction () {
+  var x = document.getElementById("navmenu");
+  if (x.className === "") {
+    x.className += "responsive";
+  } else {
+    x.className = "";
+  }
+}
+function navItemClickFunction() {
+  var x = document.getElementById("navmenu");
+  x.className = "";
+}
+  </script>
+  <title>Algebraic Structures in Topology</title>
+</head>
+<body class="scroller" style="background-image: url(images/banner.png); background-attachment: fixed; background-size: cover;">
+  <label class="hamb" for="side-menu" href="javascript:void(0);" onclick="hambClickFunction()"><span class="hamb-line"></span></label>
+  <div id="navbar" style="position: absolute; top: 0; left: 0; z-index: 1;">
+    <div id="navmenu">
+      <ul class="navbar-right">
+        <li id="aboutnavbutton" onclick="navItemClickFunction()">about</li>
+        <li id="speakersnavbutton" onclick="navItemClickFunction()">speakers</li>
+        <li id="organizersnavbutton" onclick="navItemClickFunction()">organizers</li>
+        <li> <a href="https://sites.google.com/view/algebraicstructures" target="_blank" onclick="navItemClickFunction()">past years</a></li>
+        <li> <a href="https://algtoppr.github.io/schedule.pdf" target="_blank" onclick="navItemClickFunction()">schedule and abstracts</a> </li>
+        <li> <a href="https://algtoppr.github.io/june8" target="_blank" onclick="navItemClickFunction()">june 8th</a> </li>
+        <li> <a href="https://algtoppr.github.io/notes" target="_blank" onclick="navItemClickFunction()">notes</a> </li>
+        <li> <a href="images/poster.jpeg" target="_blank" onclick="navItemClickFunction()">poster</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="parallax scroller">
+    <div class="parallax__group" style="z-index:2;">
+      <div class="section home-page-header parallax__layer parallax__layer--base">
+        <div id="algtoppr-title" class="page-header-title">
+          <img id="algebraicstructures" src="images/algebraicstructures.png">
+          <img id="intopology" src="images/intopology.png" style="opacity:0;">
+        </div>
+      </div>
+    </div>
+    <div class="parallax__group" style="z-index: index -1 !important;">
+      <div class="section home-page-header parallax__layer parallax__layer--base">
+        <div class="page-header-title">
+          <img src="images/algebraicstructures.png" style="opacity:0;">
+          <img src="images/intopology.png">
+        </div>
+      </div>
+      <div id="algtoppr-about" class="section parallax__layer parallax__layer--base">
+        <div class="section__content section__content--narrow">
+          <h1>About</h1>
+          <p>
+            This is the website for an algebraic topology conference series meeting every two years in San Juan, Puerto Rico supported by the National Science Foundation, Purdue University, the Institute of the Mathematical Sciences of the Americas at the University of Miami, and the University of Puerto Rico. The conferences will feature a variety of events focusing on recent developments in algebraic topology and their applications to geometry, physics, and data science. 
+            <br>
+            <br>
+            The next iteration of the series will occur on <b>June 5 - June 14, 2024</b>. This event will have three parts. From June 5th to June 7th it will feature three introductory mini-courses on the topics of configuration spaces, algebraic K-theory, and string topology accessible to graduate students and researchers in related fields outside algebraic topology.
+On June 8th, there will be a special event open to the general public titled <i><a href="http://algtoppr.github.io/june8.html" style="text-decoration:none">Topology in mathematics and beyond </a></i> featuring two talks about the role of topology within mathematics and in other fields of science. Both of these events will take place at the <b>University of Puerto Rico - Rio Piedras</b> campus. The main research conference will then take place from June 10th to June 14th at the <b>AC Hotel Condado</b> in San Juan. It will feature talks by invited speakers as well as contributed talks. 
+More information including the schedule and abstracts may be found <a href="http://algtoppr.github.io/schedule.pdf" style="text-decoration:none">here</a>.
+            
+            <br><br>
+            Registration for the 2024 conference is now closed. 
+          </p>  
+        </div>
+      </div>
+      <div id="algtoppr-speakers" class="section parallax__layer parallax__layer--base">
+        <div class="section__content section__content--narrow">
+          <h1>Speakers</h1>
+          <p>
+       Mini-courses (June 5 - June 7)
+           <ul>
+             <li> Teena Gerhardt (Michigan State University) </li>
+            <li> Ben Knudsen (Northeastern University)</li>   
+            <li> Florian Naef (Trinity College Dublin) </li>
+           </ul>
+         <br>
+      General public event <i><a href="http://algtoppr.github.io/june8.html" style="text-decoration:none">Topology in mathematics and beyond </a></i> (June 8)
+<ul>
+<li> Alejandro Adem (President of Natural Sciences and Engineering Research Council of Canada, University of British Columbia) </li>
+<li> Robert Ghrist (University of Pennsylvania)</li>
+</ul>        
+ <br>
+Research conference (June 10 - June 14)
+            <ul>
+             
+            <li> Omar Antolín Camarena (Universidad Nacional Autónoma de México)</li>
+              
+            <li> Luciana Basualdo Bonatto (Max Planck Institute at Bonn) </li>
+
+            <li> Agnes Beaudry (University of Colorado at Boulder) </li>
+            
+            <li> Mark Behrens (University of Notre Dame)</li>
+            
+            <li> Eugenia Ellis (Universidad de la Républica de Uruguay)</li>
+
+            <li> Teena Gerhardt (Michigan State University) </li>
+            
+            <li> Søren Galatius (University of Copenhagen / Columbia University)</li>
+
+            <li> Ben Knudsen (Northeastern University)</li>   
+
+            <li> Cary Malkiewich (Binghamton University) </li>
+
+            <li> Florian Naef (Trinity College Dublin) </li>
+          
+            <li> Sam Nariman (Purdue University)</li> 
+            
+            <li> Angélica Osorno (Reed College)</li>
+
+            <li> Peter Patzt (University of Oklahoma) </li>  
+            
+            <li> Jose Perea (Northeastern University)</li>
+
+            <li> J.D. Quigley (University of Virginia) </li>
+            
+            <li> Maru Sarazola (University of Minnesota)</li>
+          
+              </ul>
+          </p>
+
+        </div>
+      </div>
+      <div id="algtoppr-organizers" class="section parallax__layer parallax__layer--base">
+        <div class="section__content section__content--narrow">
+          <h1>organizers</h1>
+          <p>
+            This conference series is organized by Manuel Rivera (Purdue University), Ralph Kaufmann (Purdue University), Mona Merling (UPenn), Jeremy Miller (Purdue University), and Natalia Pacheco-Tallaj (MIT). 
+            If you have any questions you may organizers the organizers at algptoppr at gmail dot com. 
+          </p>  
+        </div>
+      </div>
+      <div id="algtoppr-location" class="section parallax__layer parallax__layer--base invis">
+        <div class="section__content section__content--wide">
+          <h1>Location</h1>
+        </div>
+      </div>
+      <div id="algtoppr-funding" class="section parallax__layer parallax__layer--base">
+        <div class="section__content section__content--narrow">
+          <h1>Sponsors</h1>
+          <!-- <div class="row" style="width:100%;">
+            <img src="images/IMSA-logo.svg" alt="IMSA" style="width:80%">
+          </div>
+          <div class="row" style="width:100%;">
+            <img src="images/UPRRP-logo.png" alt="UPRRP" style="width:80%">
+          </div>
+          <div class="row" style="width:100%;">
+              <img src="images/NSF-logo.png" alt="NSF" style="width:40%; margin:auto;">
+          </div>
+          <div class="row">
+              <img src="images/Purdue-logo.png" alt="Purdue" style="width:80%">
+          </div> -->
+          <ul>
+            <li>The <a href="https://www.imsa.miami.edu/" style="text-decoration:none" >Institute of Mathematical Sciences of the Americas (IMSA)</a> at the University of Miami</li>
+            <li>The <a href="https://www.nsf.gov/" style="text-decoration:none"> National Science Foundation</a> </li>
+            <li><a href="https://www.math.purdue.edu/" style="text-decoration:none">Purdue University</a></li>
+            <li>The <a href="https://math.uprrp.edu/" style="text-decoration:none">University of Puerto Rico, Rio Piedras campus</a></li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+    <!-- <div class="parallax__group">
+      <div class="parallax__layer parallax__layer--slightback">
+        <div class="tetrahedron2"><img src="images/tetrahedron2.png"></div>
+      </div>
+      <div class="parallax__layer parallax__layer--slightback">
+        <div class="tetrahedron4"><img src="images/tetrahedron4.png"></div>
+      </div>
+    </div> -->
+  </div>
+</body>
+</html>
