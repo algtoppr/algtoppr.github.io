@@ -11,6 +11,7 @@
   <script>
     $(function(){
       $("#includedContent--about").load("about.html"); 
+      $("#includedContent--registration").load("registration.html");
       $("#includedContent--speakers").load("speakers.html");
       $("#includedContent--organizers").load("organizers.html");
     });
@@ -32,6 +33,7 @@ $(document).ready(function() {
   // Load all content and setup event delegation when all content is loaded
   Promise.all([
     loadContent("about.html", "#includedContent--about"),
+   loadContent("registration.html", "#includedContent--registration"),
     loadContent("speakers.html", "#includedContent--speakers"),
     loadContent("organizers.html", "#includedContent--organizers")
   ]).then(function() {
@@ -117,6 +119,20 @@ function navItemClickFunction() {
           </p>  
         </div>
       </div>
+<div id="algtoppr-registration" class="section parallax__layer parallax__layer--base">
+        <div class="section__content section__content--narrow">
+          <h1>Registration</h1>
+          <p>
+            The registration for this conference is now open and will close on March 31st, 2026. To register fill the form <a href="https://forms.gle/YgKuSNGGDxtfxxL77" style="text-decoration:none">here</a>.
+          </p>  
+        </div>
+      </div>
+
+
+
+
+
+     
       <div id="algtoppr-speakers" class="section parallax__layer parallax__layer--base">
         <div class="section__content section__content--narrow">
           <h1>Preliminary Speakers</h1>
